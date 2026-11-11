@@ -1,0 +1,31 @@
+name: 功能建议
+description: 希望预设增加什么能力，或调整输出方式
+title: "[Feature] "
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: 想要什么
+      description: 描述你希望它做到的事，最好附上一段「它现在这样，我希望它那样」的对比。
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: 为什么需要
+      description: 你实际的工作场景是什么？哪一步现在最费劲？
+    validations:
+      required: false
+  - type: dropdown
+    id: scope
+    attributes:
+      label: 影响范围
+      options:
+        - 只改人格/说话方式
+        - 增加工具能力
+        - 调整输出格式（比如文件树组织方式）
+        - 知识库检索策略
+        - 其他
+    validations:
+      required: true

@@ -1,0 +1,31 @@
+name: Validate Preset
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  validate:
+    name: 校验预设结构
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: 安装依赖
+        run: npm install --no-audit --no-fund
+
+      - name: 校验 agent.patch.yml
+        run: node scripts/validate.mjs
+
+      - name: 检查 README 横幅
+        run: |
+          test -f assets/banner.svg || { echo "缺少 assets/banner.svg"; exit 1; }
+          grep -q 'data:image/png;base64,' assets/banner.svg || { echo "banner.svg 未内嵌 logo"; exit 1; }
+          echo "横幅正常"

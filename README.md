@@ -10,8 +10,10 @@
 [![DSH](https://img.shields.io/badge/DSH-%E2%89%A50.2.1--rc.3-122C6E?style=for-the-badge&logo=deepseek&logoColor=white)](https://github.com/deepseek-ai)
 [![Version](https://img.shields.io/badge/Version-0.1.0-F0B429?style=for-the-badge&logo=git&logoColor=white)](https://github.com/ZJTM-Studio/dshgo-CNminecraft-add-on-Development/releases)
 [![Platform](https://img.shields.io/badge/Platform-Linux%20%7C%20macOS%20%7C%20Android-0A1B45?style=for-the-badge&logo=linux&logoColor=white)](#)
+[![Validate](https://github.com/ZJTM-Studio/dshgo-CNminecraft-add-on-Development/actions/workflows/validate.yml/badge.svg)](https://github.com/ZJTM-Studio/dshgo-CNminecraft-add-on-Development/actions/workflows/validate.yml)
 
 [快速开始](#-快速开始) ·
+[使用示例](#-使用示例) ·
 [能力](#-能力) ·
 [知识库](#-知识库) ·
 [结构](#-结构) ·
@@ -82,6 +84,34 @@ tar xzf mc-netease.tar.gz -C $DSH_HOME/knowledge/
 
 ---
 
+## 💬 使用示例
+
+```
+你：做一个自定义方块，右键放光
+
+筑界工坊：
+  → 检索 mcdocs/1-ModAPI/接口/方块/RegisterBlockPalette
+  → 检索 mcguide/自定义方块/自定义方块配置
+
+  behavior_pack/
+  ├── manifest.json
+  ├── netease_blocks/
+  │   └── glow_block.json          ← 方块定义
+  └── netease_scripts/
+      └── modMain.py               ← 右键逻辑
+
+  [给出每个文件的完整内容]
+
+  收尾三问：
+  ✓ 能导入 MCStudio 吗 —— 行为包+资源包已配对
+  ✓ uuid 全唯一吗 —— 已生成 3 个不重复 uuid
+  ✓ 路径大小写对吗 —— 与 netease_blocks 定义一致
+```
+
+关键在于它**先查文档再动手**，查不到就说「文档里没有」，不会编一个不存在的 API 给你。
+
+---
+
 ## 🎯 能力
 
 - **完整模组包产出**：行为包 + 资源包成对生成，`manifest.json` 的 uuid 全唯一，目录路径大小写与磁盘严格一致（网易黑紫块最高频原因）
@@ -116,6 +146,12 @@ dshgo-CNminecraft-add-on-Development/
 │   ├── logo.jpg              # 工作室图标
 │   └── logo-full.jpg         # 工作室横版标识
 ├── LICENSE                   # MIT
+├── scripts/
+│   └── validate.mjs          # 预设结构校验
+├── .github/
+│   ├── workflows/validate.yml
+│   └── ISSUE_TEMPLATE/
+├── CHANGELOG.md
 └── README.md
 ```
 
@@ -165,6 +201,10 @@ dshgo-CNminecraft-add-on-Development/
 </details>
 
 ---
+
+## 📄 更新日志
+
+见 [CHANGELOG.md](CHANGELOG.md)
 
 ## 📄 License
 

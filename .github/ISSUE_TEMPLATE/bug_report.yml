@@ -1,0 +1,59 @@
+name: 问题反馈
+description: 预设装不上、显示「不可用」、或行为不符合预期
+title: "[Bug] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        感谢反馈。填得越具体，定位越快。
+  - type: input
+    id: dsh-version
+    attributes:
+      label: DSH 版本
+      description: 在 App 设置里能看到，例如 0.2.2-rc.1
+      placeholder: 0.2.2-rc.1
+    validations:
+      required: true
+  - type: dropdown
+    id: platform
+    attributes:
+      label: 运行平台
+      options:
+        - Android (DSH Go)
+        - Linux
+        - macOS
+        - Windows
+    validations:
+      required: true
+  - type: textarea
+    id: symptom
+    attributes:
+      label: 现象
+      description: 具体发生了什么？如果是界面问题，贴截图。
+      placeholder: 重启后预设选择器里该预设标着「不可用」
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: 报错信息 / 日志
+      description: |
+        最有用的是隔离实例的启动日志。可以这样跑：
+        ```bash
+        dsh web --patch <你平时的 patch> --port 3095 --no-open
+        ```
+        日志里会直接出现 `agent preset <id>: failed to import ...`
+      render: shell
+    validations:
+      required: false
+  - type: textarea
+    id: steps
+    attributes:
+      label: 复现步骤
+      placeholder: |
+        1. dsh plugin --profile web add file:$PWD
+        2. 重启 DSH
+        3. 打开预设选择器
+    validations:
+      required: false
