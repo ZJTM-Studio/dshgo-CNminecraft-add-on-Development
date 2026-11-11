@@ -19,13 +19,21 @@ jobs:
           node-version: '20'
 
       - name: 安装依赖
-        run: npm install --no-audit --no-fund
+        run: npm ci --no-audit --no-fund
 
       - name: 校验 agent.patch.yml
         run: node scripts/validate.mjs
 
-      - name: 检查 README 横幅
+      - name: 检查静态资源与文档
         run: |
-          test -f assets/banner.svg || { echo "缺少 assets/banner.svg"; exit 1; }
+          for f in assets/banner.svg assets/screenshot.svg assets/logo.jpg assets/logo-full.jpg; do
+            test -f "$f" || { echo "缺少 $f"; exit 1; }
+          done
+          for f in docs/install.md docs/architecture.md docs/faq.md CHANGELOG.md CONTRIBUTING.md SECURITY.md; do
+            test -f "$f" || { echo "缺少 $f"; exit 1; }
+          done
           grep -q 'data:image/png;base64,' assets/banner.svg || { echo "banner.svg 未内嵌 logo"; exit 1; }
-          echo "横幅正常"
+          for f in assets/banner.svg assets/screenshot.svg; do
+            python3 -c "import xml.dom.minidom,sys; xml.dom.minidom.parse('$f')" || { echo "$f XML 语法错误"; exit 1; }
+          done
+          echo "静态资源与文档检查通过"

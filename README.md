@@ -17,7 +17,8 @@
 [能力](#-能力) ·
 [知识库](#-知识库) ·
 [结构](#-结构) ·
-[常见问题](#-常见问题)
+[常见问题](#-常见问题) ·
+[文档](docs/)
 
 </div>
 
@@ -86,6 +87,8 @@ tar xzf mc-netease.tar.gz -C $DSH_HOME/knowledge/
 
 ## 💬 使用示例
 
+<img src="assets/screenshot.svg" width="100%" alt="使用示例"/>
+
 ```
 你：做一个自定义方块，右键放光
 
@@ -151,7 +154,14 @@ dshgo-CNminecraft-add-on-Development/
 ├── .github/
 │   ├── workflows/validate.yml
 │   └── ISSUE_TEMPLATE/
+├── docs/
+│   ├── install.md            # 安装详解与排错
+│   ├── architecture.md       # 架构说明
+│   └── faq.md                # 详细 FAQ
 ├── CHANGELOG.md
+├── CONTRIBUTING.md
+├── SECURITY.md
+├── CODE_OF_CONDUCT.md
 └── README.md
 ```
 
@@ -199,6 +209,20 @@ dshgo-CNminecraft-add-on-Development/
 压缩 2.6 MB，解压 14 MB。不装也能用，但会失去「先查文档再回答」的能力，退化成普通助手。
 
 </details>
+
+更多问题见 **[docs/faq.md](docs/faq.md)**。
+
+---
+
+## 🤝 参与贡献
+
+欢迎提 Issue 和 PR。改之前先看：
+
+- **[贡献指南](CONTRIBUTING.md)** —— 三条硬规矩（顶层 name 不能改、pwsh 要带平台禁用、人格与能力分开）
+- **[架构说明](docs/architecture.md)** —— 预设怎么工作、22 个工具条目怎么分组
+- **[安装详解](docs/install.md)** —— 含排错
+- **[安全策略](SECURITY.md)** · **[行为准则](CODE_OF_CONDUCT.md)**
+- **[详细 FAQ](docs/faq.md)**
 
 ---
 

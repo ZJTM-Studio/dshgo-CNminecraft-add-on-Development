@@ -1,0 +1,25 @@
+name: Mark stale issues
+
+on:
+  schedule:
+    - cron: '0 2 * * 1'   # 每周一 UTC 02:00
+  workflow_dispatch:
+
+jobs:
+  stale:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+      pull-requests: write
+    steps:
+      - uses: actions/stale@v9
+        with:
+          days-before-stale: 45
+          days-before-close: 15
+          stale-issue-label: 'stale'
+          stale-issue-message: >
+            这个 Issue 已经 45 天没有新进展了。如果问题仍然存在，
+            请补充最新情况（DSH 版本、报错日志），否则 15 天后会自动关闭。
+          close-issue-message: '因长期无响应自动关闭。可以随时重开。'
+          exempt-issue-labels: 'bug,enhancement,pinned'
+          only-issue-types: 'Bug,Feature'
