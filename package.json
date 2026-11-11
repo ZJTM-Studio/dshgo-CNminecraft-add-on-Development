@@ -1,0 +1,27 @@
+{
+  "name": "dsh-agent-mcdev",
+  "version": "0.1.0",
+  "description": "网易《我的世界》中国版模组开发专用 Agent 预设：直接产出可导入 MCStudio 的完整模组包",
+  "license": "MIT",
+  "type": "module",
+  "keywords": [
+    "deepseek-harness",
+    "dsh",
+    "agent-preset",
+    "minecraft",
+    "netease",
+    "mcstudio",
+    "modsdk"
+  ],
+  "engines": {
+    "dsh": ">=0.2.1-rc.3 <0.3.0"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./patch/agent.patch.yml"
+    }
+  },
+  "files": [
+    "patch/agent.patch.yml"
+  ]
+}
