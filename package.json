@@ -1,6 +1,6 @@
 {
   "name": "dsh-agent-mcdev",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "网易《我的世界》中国版模组开发专用 Agent 预设：直接产出可导入 MCStudio 的完整模组包",
   "license": "MIT",
   "type": "module",

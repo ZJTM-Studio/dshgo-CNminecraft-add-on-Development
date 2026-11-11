@@ -43,7 +43,7 @@
 flowchart LR
     A[选中预设] --> B[加载人格 + 22 个工具条目]
     B --> C{需要查文档?}
-    C -->|是| D[grep 本地知识库<br/>1483 篇官方文档]
+    C -->|是| D[grep 本地知识库<br/>845 页官方文档]
     C -->|否| E[直接产出]
     D --> E
     E --> F[完整文件树<br/>行为包 + 资源包]
@@ -70,9 +70,9 @@ dsh plugin --profile web add file:$PWD
 预设会去 `$DSH_HOME/knowledge/mc-netease/` 检索官方文档。没有这个目录时，它会退化成普通助手。
 
 ```bash
-# 下载（压缩后 2.6 MB，解压后 14 MB / 1483 篇）
+# 下载（压缩后 1.6 MB，解压后 8.2 MB / 845 页）
 curl -L -o mc-netease.tar.gz \
-  https://github.com/ZJTM-Studio/dshgo-CNminecraft-add-on-Development/releases/download/v0.1.0-kb/mc-netease.tar.gz
+  https://github.com/ZJTM-Studio/dshgo-CNminecraft-add-on-Development/releases/download/v0.2.0-kb/mc-netease.tar.gz
 
 # 解压到知识库目录
 mkdir -p $DSH_HOME/knowledge
@@ -93,8 +93,8 @@ tar xzf mc-netease.tar.gz -C $DSH_HOME/knowledge/
 你：做一个自定义方块，右键放光
 
 筑界工坊：
-  → 检索 mcdocs/1-ModAPI/接口/方块/RegisterBlockPalette
-  → 检索 mcguide/自定义方块/自定义方块配置
+  → 检索 api/jiekou/fangkuai/ 下的方块接口
+  → 检索 mcguide/20-wanfakaifa/ 下的预设开发
 
   behavior_pack/
   ├── manifest.json
@@ -119,21 +119,29 @@ tar xzf mc-netease.tar.gz -C $DSH_HOME/knowledge/
 
 - **完整模组包产出**：行为包 + 资源包成对生成，`manifest.json` 的 uuid 全唯一，目录路径大小写与磁盘严格一致（网易黑紫块最高频原因）
 - **网易版专精**：只写 ModSDK / Apollo / Python 脚本，禁用国际版 API 与目录布局
-- **文档优先**：回答前先检索 1483 篇官方文档，查不到明说「文档里没有」，不编造 API
+- **文档优先**：回答前先检索 845 页官方文档，查不到明说「文档里没有」，不编造 API
 - **收尾自检**：每次交付前强制三问 —— 能导入吗 / uuid 唯一吗 / 路径大小写对吗
 
 ---
 
 ## 📚 知识库
 
-| 分支 | 内容 | 篇数 |
+| 路径 | 内容 | 页数 |
 |---|---|---|
-| `mcdocs` | ModAPI 接口参考 | 283 |
-| `mcguide` | 开发指南与规范 | 584 |
-| `mconline` | MCStudio 教程 | 615 |
-| **合计** | | **1483** |
+| `api/jiekou/` | ModAPI 接口（方块 实体 世界 玩家 物品 物理 UI 特效…） | 105 |
+| `api/meijuzhi/` | 枚举值 | 75 |
+| `api/shijian/` | 事件 | 13 |
+| `api/PresetAPI/` | 预设架构 API | 39 |
+| `api/Apollo/` | Apollo 联机 SDK | 13 |
+| `api/ShaderSDK/` | 着色器 SDK | 8 |
+| `api/gengxinxinxi/` | 版本更新日志（2.x → 3.10） | 29 |
+| `mcguide/` | 开发指南（玩法开发 177 / 手机网游 94 / 电脑网游 65 / 美术 28 …） | 532 |
+| `guide/` | PC Java 服务器开发（认证 反作弊 跨服 经济 公会 性能） | 23 |
+| **合计** | | **845** |
 
-来源：网易官方文档站 `mc.163.com/dev/mcmanual/mc-dev/`，本地镜像含 `INDEX.md` 分类树。
+> **来源变更**：网易已把文档站整体迁移到 `mc.163.com/newdev/docs/`（VitePress）。
+> 旧站 `mc.163.com/dev/mcmanual/mc-dev/` **已下线（404）**，本知识库为迁移后的版本。
+> 当前文档版本：**3.10 / BE 1.21.130**
 
 ---
 

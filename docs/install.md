@@ -34,13 +34,13 @@ stat -c '%i %n' \
 
 ```bash
 curl -L -o mc-netease.tar.gz \
-  https://github.com/ZJTM-Studio/dshgo-CNminecraft-add-on-Development/releases/download/v0.1.0-kb/mc-netease.tar.gz
+  https://github.com/ZJTM-Studio/dshgo-CNminecraft-add-on-Development/releases/download/v0.2.0-kb/mc-netease.tar.gz
 
 mkdir -p $DSH_HOME/knowledge
 tar xzf mc-netease.tar.gz -C $DSH_HOME/knowledge/
 
-# 验证：应该输出 1483
-find $DSH_HOME/knowledge/mc-netease -name "*.md" | wc -l
+# 验证：应该输出 845
+find $DSH_HOME/knowledge/mc-netease -name "*.html" | wc -l
 ```
 
 ## 第三步：重启并选用
