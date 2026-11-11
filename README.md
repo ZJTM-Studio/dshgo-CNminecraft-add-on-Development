@@ -6,10 +6,10 @@
 
 **DSH Agent 预设 · 网易《我的世界》中国版模组开发专用**
 
-[![License](https://img.shields.io/badge/License-MIT-57CC99?style=for-the-badge&logo=opensourceinitiative&logoColor=white)](LICENSE)
-[![DSH](https://img.shields.io/badge/DSH-%E2%89%A50.2.1--rc.3-1B9AAA?style=for-the-badge&logo=deepseek&logoColor=white)](https://github.com/deepseek-ai)
-[![Version](https://img.shields.io/badge/Version-0.1.0-F4A261?style=for-the-badge&logo=git&logoColor=white)](https://github.com/ZJTM-Studio/dshgo-CNminecraft-add-on-Development/releases)
-[![Platform](https://img.shields.io/badge/Platform-Linux%20%7C%20macOS%20%7C%20Android-0D1B2A?style=for-the-badge&logo=linux&logoColor=white)](#)
+[![License](https://img.shields.io/badge/License-MIT-1B3F8F?style=for-the-badge&logo=opensourceinitiative&logoColor=white)](LICENSE)
+[![DSH](https://img.shields.io/badge/DSH-%E2%89%A50.2.1--rc.3-122C6E?style=for-the-badge&logo=deepseek&logoColor=white)](https://github.com/deepseek-ai)
+[![Version](https://img.shields.io/badge/Version-0.1.0-F0B429?style=for-the-badge&logo=git&logoColor=white)](https://github.com/ZJTM-Studio/dshgo-CNminecraft-add-on-Development/releases)
+[![Platform](https://img.shields.io/badge/Platform-Linux%20%7C%20macOS%20%7C%20Android-0A1B45?style=for-the-badge&logo=linux&logoColor=white)](#)
 
 [快速开始](#-快速开始) ·
 [能力](#-能力) ·
@@ -112,7 +112,9 @@ dshgo-CNminecraft-add-on-Development/
 ├── patch/
 │   └── agent.patch.yml       # 预设定义：persona + 22 个工具条目
 ├── assets/
-│   └── banner.svg            # README 横幅
+│   ├── banner.svg            # README 横幅
+│   ├── logo.jpg              # 工作室图标
+│   └── logo-full.jpg         # 工作室横版标识
 ├── LICENSE                   # MIT
 └── README.md
 ```
@@ -170,6 +172,11 @@ dshgo-CNminecraft-add-on-Development/
 
 <div align="center">
 
-<sub>筑界工坊 · 只做网易中国版</sub>
+<img src="assets/logo-full.jpg" width="420" alt="筑界同盟工作室 Architects' Alliance"/>
+
+<br/><br/>
+
+<sub><b>筑界同盟工作室</b> · Architects' Alliance</sub><br/>
+<sub>只做网易中国版</sub>
 
 </div>
