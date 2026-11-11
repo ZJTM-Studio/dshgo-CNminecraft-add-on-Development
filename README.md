@@ -33,13 +33,19 @@ dsh plugin --profile web add file:$PWD
 
 预设会去 `/root/.dsh/knowledge/mc-netease/` 检索网易官方文档。没有这个目录时，它会退化成普通助手。
 
-知识库共 1483 篇（ModAPI 参考 / 开发指南 / 教程），约 14 MB，单独发布在 Releases 里：
+知识库共 1483 篇（ModAPI 参考 / 开发指南 / 教程），约 14 MB，发布在 Releases 里：
 
 ```bash
-# 下载并解压到 DSH 知识库目录
+# 下载（压缩后 2.6 MB）
+curl -L -o mc-netease.tar.gz \
+  https://github.com/ZJTM-Studio/dshgo-CNminecraft-add-on-Development/releases/download/v0.1.0-kb/mc-netease.tar.gz
+
+# 解压到 DSH 知识库目录
 mkdir -p $DSH_HOME/knowledge
 tar xzf mc-netease.tar.gz -C $DSH_HOME/knowledge/
 ```
+
+解压后路径为 `$DSH_HOME/knowledge/mc-netease/`。
 
 ## 结构
 
