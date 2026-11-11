@@ -249,6 +249,5 @@ dshgo-CNminecraft-add-on-Development/
 <br/><br/>
 
 <sub><b>筑界同盟工作室</b> · Architects' Alliance</sub><br/>
-<sub>只做网易中国版</sub>
 
 </div>
