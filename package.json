@@ -29,5 +29,17 @@
   },
   "scripts": {
     "validate": "node scripts/validate.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ZJTM-Studio/dshgo-CNminecraft-add-on-Development.git"
+  },
+  "homepage": "https://github.com/ZJTM-Studio/dshgo-CNminecraft-add-on-Development#readme",
+  "bugs": {
+    "url": "https://github.com/ZJTM-Studio/dshgo-CNminecraft-add-on-Development/issues"
+  },
+  "author": {
+    "name": "筑界同盟工作室",
+    "url": "https://github.com/ZJTM-Studio"
   }
 }
